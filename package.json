@@ -4,7 +4,6 @@
   "description": "SmartApp that will trigger an SMS Notification Alert for devices with low battery.",
   "main": "index.js",
   "scripts": {
-    "test-services": "jest sms-notification-service.test.js",
     "server": "node server.js"
   },
   "repository": {

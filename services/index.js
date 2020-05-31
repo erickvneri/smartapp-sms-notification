@@ -1,1 +1,0 @@
-module.exports = { smsNotification } = require('./sms/sms-notification-service')

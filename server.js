@@ -7,7 +7,7 @@ const axios = require('axios');
 const SmartApp = require('@smartthings/smartapp');
 
 // Sms notification service import
-const { smsNotification } = require('./services');
+const { smsNotification } = require('./util');
 
 // Server init
 const server = express();
@@ -21,7 +21,7 @@ smartApp.appId(process.env.APP_ID)
         .permissions(['r:devices:*', 'x:devices:*', 'r:rules:*', 'w:rules:*', 'r:locations:*'])
         .page('mainPage', (ctx, page, configData) => {
             page.section('devices', section => {
-                section.deviceSetting('batteryCheck')
+                section.deviceSetting('batteryDevices')
                        .name('Select your devices')
                        .description('')
                        .capabilities(['battery'])
@@ -31,7 +31,14 @@ smartApp.appId(process.env.APP_ID)
             })
         })
         .updated(async (context, updateData) => {
-            // INSTALL LIFECYCLE
+            // Create refresh Rule
+
+            // Create subscriptions
+            context.api.subscriptions.unsubscribeAll();
+            context.api.subscriptions.subscribeToDevices(context.config.batteryDevices, 'battery', 'battery', 'batterySubscription');
+        })
+        .subscribedEventHandler('batterySubscription', (context, event) => {
+            console.log(event)
         })
 
 // Enable server routing
