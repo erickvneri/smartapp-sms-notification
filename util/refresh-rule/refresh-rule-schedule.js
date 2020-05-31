@@ -1,6 +1,6 @@
 exports.refreshSchedule = function(devices){
     return {
-        name: 'refresh',
+        name: 'Test Device Health Care SmartApp - Refresh Schedule Rule',
         actions: [
             {
                 every: {
@@ -9,23 +9,23 @@ exports.refreshSchedule = function(devices){
                             integer: 3
                         },
                         unit: 'Hour'
-                    }
-                },
-                actions: [
-                    {
-                        command: {
-                            devices: devices,
-                            commands: [
-                                {
-                                    component: 'main',
-                                    capability: 'refresh',
-                                    command: 'refresh',
-                                    arguments: []
-                                }
-                            ]
+                    },
+                    actions: [
+                        {
+                            command: {
+                                devices: devices,
+                                commands: [
+                                    {
+                                        component: 'main',
+                                        capability: 'refresh',
+                                        command: 'refresh',
+                                        arguments: []
+                                    }
+                                ]
+                            }
                         }
-                    }
-                ]
+                    ]
+                }
             }
         ]
     }
