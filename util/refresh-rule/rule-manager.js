@@ -10,7 +10,7 @@ exports.refreshRuleManager = function(context){
     context.api.rules.list(context.locationId).then(rules => {
         if (!rules){
             // If no rules: Create it.
-            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('Refresh Schedule Rule created.\n',response));
+            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('\"nRefresh Schedule" Rule created. ',response));
         } 
         else {    
             // If user has rules, track Refresh Schedule Rule.
@@ -18,11 +18,11 @@ exports.refreshRuleManager = function(context){
                 if (r.name == scheduleRule.name){
                     // Delete Rule to avoid duplications.
                     // FIXME: Use update method.
-                    context.api.rules.delete(r.id, context.locationId).then(res => console.log('\nUpdating Refresh Schedule Rule...'))
+                    context.api.rules.delete(r.id, context.locationId).then(res => console.log('\nUpdating "Refresh Schedule" Rule...'))
                 }
             })
             // Recreate Refresh Schedules Rule.
-            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('Refresh Schedule Rule updated.\n',response));
+            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('\n"Refresh Schedule" Rule updated.',response));
         }
     });
 };

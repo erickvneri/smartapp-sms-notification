@@ -41,9 +41,11 @@ smartApp.appId(process.env.APP_ID)
             context.api.subscriptions.subscribeToDevices(context.config.batteryDevices, 'healthCheck', '*', 'healthSubscription');
         })
         .subscribedEventHandler('batterySubscription', (context, event) => {
+            // IMPLEMENT SMS SERVICE  
             console.log(event)
         })
         .subscribedEventHandler('healthSubscription', (context, event) => {
+            // IMPLEMENT SMS SERVICE
             console.log(event)
         })
 
