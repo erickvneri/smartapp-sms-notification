@@ -6,8 +6,8 @@ const express = require('express');
 const SmartApp = require('@smartthings/smartapp');
 
 // Sms notification service import
-const { smsNotification } = require('./util');
-const { refreshRuleManager } = require('./util')
+const { notificationManager } = require('./util/sms-notification/notification-manager');
+const { refreshRuleManager } = require('./util');
 
 // Server init
 const server = express();
@@ -17,8 +17,7 @@ const smartApp = new SmartApp()
 
 // SmartApp definition
 smartApp.appId(process.env.APP_ID)
-        .disableCustomDisplayName(false)
-        .enableEventLogging(2)
+        // .enableEventLogging(2)
         .permissions(['r:devices:*', 'x:devices:*', 'r:rules:*', 'w:rules:*', 'r:locations:*'])
         .page('mainPage', (ctx, page, configData) => {
             page.section('devices', section => {
@@ -40,13 +39,13 @@ smartApp.appId(process.env.APP_ID)
             context.api.subscriptions.subscribeToDevices(context.config.batteryDevices, 'battery', 'battery', 'batterySubscription');
             context.api.subscriptions.subscribeToDevices(context.config.batteryDevices, 'healthCheck', '*', 'healthSubscription');
         })
-        .subscribedEventHandler('batterySubscription', (context, event) => {
-            // IMPLEMENT SMS SERVICE  
-            console.log(event)
+        .subscribedEventHandler('batterySubscription', async (context, event) => {
+            // Battery events handler  
+            await notificationManager(context, event);
         })
-        .subscribedEventHandler('healthSubscription', (context, event) => {
-            // IMPLEMENT SMS SERVICE
-            console.log(event)
+        .subscribedEventHandler('healthSubscription', async (context, event) => {
+            // Health check events handler
+            await notificationManager(context, event);
         })
 
 // Enable server routing
