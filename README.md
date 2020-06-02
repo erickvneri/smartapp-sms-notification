@@ -41,6 +41,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 1. Create a _New Project_ - **_Automation for the SmartThings App_**.
 1. _Registe App_ as **Webhook endpoint** and paste the _live Url_. 
 1. White list the following permission scopes: `r:devices:*`, `x:devices:*`, `r:locations:*`,  `r:rules:*` and `w:rules:*`
+1. Click **next** and save your project. No additional configuration is required.
 1. Look for the **confirmation Url** at the _Glitch_ logs and open it at your browser.
 1. Deploy to test your SmartApp.
 1. Once your SmartApp gets _verified_, **deploy it to test** and it will be ready to use at the **_SmartThings App_**.
