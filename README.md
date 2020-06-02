@@ -14,12 +14,12 @@ _**Note**: To help developers to create self-hosted SmartApp instances, this Sma
 
 1. An active [SmartThings](https://smartthings.developer.samsung.com/) account.
 1. A [Twilio](https://www.twilio.com/try-twilio) account (_free tier_).
-1. A [Glitch](https://glitch.com) account(_free-tier and _).
+1. A [Glitch](https://glitch.com) account(_free-tier_).
 
 ## Setting up Glitch server.
 
 1. Go to _Glitch's_ main page.
-1. Create a **New Project**(_hello-express_).
+1. Create a **New Project** (_hello-express_).
 1. At the bottom-left, open **Tools**.
 1. Click *Import and export*/**Import from GitHub**.
 1. Write up the GitHub's path (_e.g. smartthings/smartapp-sms-notification_).
