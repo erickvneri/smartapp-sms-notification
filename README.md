@@ -13,19 +13,29 @@ _**Note**: To help developers to create self-hosted SmartApp instances, this Sma
 ## Account requirements:
 
 1. An active [SmartThings](https://smartthings.developer.samsung.com/) account.
-1. A free-tier [Twilio](https://www.twilio.com/try-twilio) account.
-1. A free-tier [Glitch](https://glitch.com) account.
+1. A [Twilio](https://www.twilio.com/try-twilio) account (_free tier_).
+1. A [Glitch](https://glitch.com) account(_free-tier and _).
 
-## Setting up SmartApp.
+## Setting up Glitch server.
 
 1. Go to _Glitch's_ main page.
-1. Create a **New Project** and **Import from GitHub**.
-1. Create a `.env` file save the following values: 
+1. Create a **New Project**(_hello-express_).
+1. At the bottom-left, open **Tools**.
+1. Click *Import and export*/**Import from GitHub**.
+1. Write up the GitHub's path (_e.g. smartthings/smartapp-sms-notification_).
 
-        ACCOUNT_SID={twilio-account-sid}
-        AUTH_TOKEN={twilio-auth-token}
-        ORIG_NUM={trial-number}
-        DEST_NUM={registered-number}
+## Setting up environment.
+1. From your _Twilio_ account, get the followig info:
+    - Account Sid.
+    - Authorization Token.
+    - Trial Number.
+    - The number that you've registered (_including the country code_).
+1. Create a `.env` file save those values as following: 
+
+        ACCOUNT_SID = xxxxxxxxxxxxxxxx
+        AUTH_TOKEN = xxxxxxxxxxxxxxxx
+        ORIG_NUM = +0000000000
+        DEST_NUM = +0000000000
 
 
     
