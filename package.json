@@ -1,0 +1,33 @@
+{
+  "name": "smartapp-battery-sms-notification",
+  "version": "1.0.0",
+  "description": "SmartApp that will trigger an SMS Notification Alert for devices with low battery.",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickvneri/smartapp-battery-sms-notification.git"
+  },
+  "keywords": [
+    "SmartThings",
+    "SmartApp",
+    "IoT",
+    "NodeJS",
+    "Express",
+    "SmartAppSDK"
+  ],
+  "author": "SmartThings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erickvneri/smartapp-battery-sms-notification/issues"
+  },
+  "homepage": "https://github.com/erickvneri/smartapp-battery-sms-notification#readme",
+  "dependencies": {
+    "@smartthings/smartapp": "^2.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "twilio": "^3.44.0"
+  }
+}
