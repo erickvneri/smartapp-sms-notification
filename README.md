@@ -20,7 +20,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 1. Create a **New Project** (_hello-express_).
 1. At the bottom-left, open **Tools**.
 1. Click *Import and export*/**Import from GitHub**.
-1. Write the GitHub's path of the project (_e.g. "git-username/smartapp-sms-notification"_).
+1. Write the GitHub's path of the project (_e.g. "git-username/smartapp-battery-sms-notification"_).
 
 ## 3. Setting up environment.
 1. From your _Twilio_ account, get the followig info:
@@ -36,10 +36,10 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
         DEST_NUM = +0000000000
 
 ## 4. Create your SmartApp Automation project.
-1. From Glitch, copy the **live Url**.
+1. From Glitch, copy the **live Url** (_top-left of screen, Share/**live Url**_).
 1. Go to your [Developer Workspace](https://smartthings.developer.samsung.com/workspace).
 1. Create a _New Project_ - **_Automation for the SmartThings App_**.
-1. _Registe App_ as **Webhook endpoint** (_Go to Glitch console/Share (top-left)/Live app and copy the Url_). 
+1. _Registe App_ as **Webhook endpoint** and paste the _live Url_. 
 1. White list the following permission scopes: `r:devices:*`, `x:devices:*`, `r:locations:*`,  `r:rules:*` and `w:rules:*`
 1. Look for the **confirmation Url** at the _Glitch_ logs and open it at your browser.
 1. Deploy to test your SmartApp.
