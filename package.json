@@ -1,10 +1,10 @@
 {
   "name": "smartapp-battery-sms-notification",
   "version": "1.0.0",
-  "description": "SmartApp that will trigger an SMS Notification Alert for devices with low battery.",
+  "description": "SmartApp that will trigger an SMS Notification Alert for devices in critical state.",
   "main": "index.js",
   "scripts": {
-    "server": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
