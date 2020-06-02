@@ -1,24 +1,32 @@
-# smartapp-sms-notification
-SmartApp that will trigger an SMS notification when battery of devices is under 25%
+## SMS Notification SmartApp - Battery Devices
 
-# SMS Notification SmartApp
+ 
+This SmartApp will subscribe **battery** devices and trigger SMS notifications in the following cases:
 
-### Insights
+- If device's battery level is under **30%**.
+- If device's health status is **offline**.
 
-- SMS Notifications based on critical status of devices or local disconnections (_Presence Sensor,
-Health Check, Motion Sensor, Location Modes, etc._).
-- Self-hosted, via AWS Lambda function or at Glitch express builder.
-- Easy environment registration and code installation.
-- SmartApp settings as database-repository of ids.
+_**Note**: To help developers to create self-hosted SmartApp instances, this SmartApp example will be hosted at [Glitch](https://glitch.com)._
 
---- 
+---
 
-- Twilio setup:
-1. Create an account at [Twilio](https://www.twilio.com/try-twilio).
-1. Get a trial number.
-1. At the end, yyour .env file should looks like following:
+## Account requirements:
 
-        ACCOUNT_SID={account-sid}
-        TWILIO_AUTH_TOKEN={auth-token}
-        APP_NUMBER={free-trial-number}
-        DEST_NUMBER={number-registered}
+1. An active [SmartThings](https://smartthings.developer.samsung.com/) account.
+1. A free-tier [Twilio](https://www.twilio.com/try-twilio) account.
+1. A free-tier [Glitch](https://glitch.com) account.
+
+## Setting up SmartApp.
+
+1. Go to _Glitch's_ main page.
+1. Create a **New Project** and **Import from GitHub**.
+1. Create a `.env` file save the following values: 
+
+        ACCOUNT_SID={twilio-account-sid}
+        AUTH_TOKEN={twilio-auth-token}
+        ORIG_NUM={trial-number}
+        DEST_NUM={registered-number}
+
+
+    
+    

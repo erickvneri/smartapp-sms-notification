@@ -11,13 +11,15 @@ const { refreshRuleManager } = require('./util');
 
 // Server init
 const server = express();
-server.use(express.json())
+server.use(express.json());
 // SmartApp init
-const smartApp = new SmartApp()
+const smartApp = new SmartApp();
 
 // SmartApp definition
-smartApp.appId(process.env.APP_ID)
-        // .enableEventLogging(2)
+smartApp.appId('Device Battery Monitor SmartApp Example')
+        .disableCustomDisplayName(false)
+        .disableRemoveApp(false)
+        .enableEventLogging(2) 
         .permissions(['r:devices:*', 'x:devices:*', 'r:rules:*', 'w:rules:*', 'r:locations:*'])
         .page('mainPage', (ctx, page, configData) => {
             page.section('devices', section => {
@@ -46,14 +48,14 @@ smartApp.appId(process.env.APP_ID)
         .subscribedEventHandler('healthSubscription', async (context, event) => {
             // Health check events handler
             await notificationManager(context, event);
-        })
+        });
 
 // Enable server routing
 server.post('/battery-check', (req, res) => {
-    smartApp.handleHttpCallback(req, res)
-})
+    smartApp.handleHttpCallback(req, res);
+});
 
 // Server listener
-server.listen(process.env.PORT, () => {
-    console.log('Server listening at port ', process.env.PORT)
-})
+server.listen(8000, () => {
+    console.log('SmartApp running at port 8000');
+});
