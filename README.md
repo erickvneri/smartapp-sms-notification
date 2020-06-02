@@ -20,7 +20,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 1. Create a **New Project** (_hello-express_).
 1. At the bottom-left, open **Tools**.
 1. Click *Import and export*/**Import from GitHub**.
-1. Write the GitHub's path of the project (_e.g. "git-username/smartapp-sms-notification"_).
+1. Write the GitHub's path of the project (_e.g. "git-username/smartapp-battery-sms-notification"_).
 
 ## 3. Setting up environment.
 1. From your _Twilio_ account, get the followig info:
