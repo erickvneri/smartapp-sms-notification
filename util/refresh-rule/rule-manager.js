@@ -10,13 +10,13 @@ exports.refreshRuleManager = function(context){
     context.api.rules.list(context.locationId).then(rules => {
         if (!rules){
             // If no Rules installed, then create it.
-            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('\"nRefresh Schedule" Rule created. ',response));
+            context.api.rules.create(scheduleRule, context.locationId).then(response => console.log('\n"Refresh Schedule" Rule created.\n',response));
         } 
         else {    
             // If user has Rules installed, track "Refresh Schedule" Rule.
             rules.forEach(r => {
                 if (r.name == scheduleRule.name){
-                    // If found, delete "Refresh" to avoid duplications.
+                    // If found, delete "Refresh" duplications.
                     context.api.rules.delete(r.id, context.locationId).then(res => console.log('\nUpdating "Refresh Schedule" Rule...'))
                 }
             })

@@ -17,9 +17,10 @@ const smartApp = new SmartApp();
 
 // SmartApp definition
 smartApp.appId('Device Battery Monitor SmartApp Example')
-        .disableCustomDisplayName(false)
+        // Uncomment below to check full lifecycle logs.
+        // .enableEventLogging(2) 
+        .disableCustomDisplayName(true)
         .disableRemoveApp(false)
-        .enableEventLogging(2) 
         .permissions(['r:devices:*', 'x:devices:*', 'r:rules:*', 'w:rules:*', 'r:locations:*'])
         .page('mainPage', (ctx, page, configData) => {
             page.section('devices', section => {
@@ -42,20 +43,24 @@ smartApp.appId('Device Battery Monitor SmartApp Example')
             context.api.subscriptions.subscribeToDevices(context.config.batteryDevices, 'healthCheck', '*', 'healthSubscription');
         })
         .subscribedEventHandler('batterySubscription', async (context, event) => {
-            // Battery events handler  
+            // Battery events handler
+            console.log(event);  
             await notificationManager(context, event);
         })
         .subscribedEventHandler('healthSubscription', async (context, event) => {
             // Health check events handler
+            console.log(event);
             await notificationManager(context, event);
         });
 
 // Enable server routing
-server.post('/battery-check', (req, res) => {
+server.post('/', (req, res) => {
+    console.log('\nLifecycle handled:', req.body.lifecycle)
     smartApp.handleHttpCallback(req, res);
 });
 
 // Server listener
-server.listen(8000, () => {
-    console.log('SmartApp running at port 8000');
+const PORT = process.env.PORT || 3000
+server.listen(PORT, () => {
+    console.log('SmartApp running at port', PORT);
 });
