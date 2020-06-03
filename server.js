@@ -16,7 +16,7 @@ server.use(express.json());
 const smartApp = new SmartApp();
 
 // SmartApp definition
-smartApp.appId('3d83d370-a26e-44b4-ad15-3e9a97003c36')
+smartApp.appId('SmartApp example')
         // Uncomment below to check full lifecycle logs.
         // .enableEventLogging(2) 
         .disableCustomDisplayName(true)
