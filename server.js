@@ -29,7 +29,7 @@ smartApp.appId('SmartApp example')
                 // Introduction of SmartApp example section
                 .section('About this example', section => {
                     section.paragraphSetting('')
-                        .name('This "Battery Monitor" SmartApp example will trigger an SMS Notification on critical device status.')
+                        .name('The "Battery Monitor" SmartApp example will trigger an SMS Notification on critical device status.')
                         .description('- Battery level dropping under 30%.\n- Device going offline.')       
                 })
                 // Devices input section
