@@ -16,21 +16,31 @@ server.use(express.json());
 const smartApp = new SmartApp();
 
 // SmartApp definition
-smartApp.appId('Device Battery Monitor SmartApp Example')
+smartApp.appId('3d83d370-a26e-44b4-ad15-3e9a97003c36')
         // Uncomment below to check full lifecycle logs.
         // .enableEventLogging(2) 
         .disableCustomDisplayName(true)
-        .disableRemoveApp(false)
+        .disableRemoveApp(true)
+        .defaultPage()
         .permissions(['r:devices:*', 'x:devices:*', 'r:rules:*', 'w:rules:*', 'r:locations:*'])
         .page('mainPage', (ctx, page, configData) => {
-            page.section('devices', section => {
+            page.complete(true)
+                .name('Battery monitor')
+                // Introduction of SmartApp example section
+                .section('About this example', section => {
+                    section.paragraphSetting('')
+                        .name('This "Battery Monitor" SmartApp example will trigger an SMS Notification on critial device status.')
+                        .description('- Battery level dropping under 30%\n- Device going offline.')       
+                })
+                // Devices input section
+            page.section('Batter devices:', section => {
                 section.deviceSetting('batteryDevices')
-                       .name('Select your devices')
-                       .description('')
-                       .capabilities(['battery'])
-                       .required(true)
-                       .multiple(true)
-                       .permissions('rx')
+                    .name('')
+                    .description('Tap to select')
+                    .capabilities(['battery'])
+                    .required(true)
+                    .multiple(true)
+                    .permissions('rx')
             })
         })
         .updated(async (context, updateData) => {
@@ -44,12 +54,12 @@ smartApp.appId('Device Battery Monitor SmartApp Example')
         })
         .subscribedEventHandler('batterySubscription', async (context, event) => {
             // Battery events handler
-            console.log(event);  
+            console.log('Battery level update:', event);  
             await notificationManager(context, event);
         })
         .subscribedEventHandler('healthSubscription', async (context, event) => {
             // Health check events handler
-            console.log(event);
+            console.log('Health Status update:', event);
             await notificationManager(context, event);
         });
 
