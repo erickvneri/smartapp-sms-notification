@@ -10,7 +10,7 @@ exports.notificationManager = async function(context, event){
     }
     // If Health Status is Offline
     else if(event.capability == 'healthCheck' && event.value == 'offline'){
-        statusMsg = `WARNING!!\nDevice "${device.label}"is offline`;
+        statusMsg = `WARNING!!\nDevice "${device.label}" is offline`;
     }
     if (!!statusMsg){
         const sms = await smsNotification(statusMsg);

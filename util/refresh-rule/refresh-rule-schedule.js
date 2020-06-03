@@ -1,6 +1,6 @@
 exports.refreshSchedule = function(devices){
     return {
-        name: 'Test Device Health Care SmartApp - Refresh Schedule Rule',
+        name: 'Battery Monitor SmartApp example - Refresh Schedule Rule',
         actions: [
             {
                 every: {
