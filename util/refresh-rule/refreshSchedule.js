@@ -1,14 +1,14 @@
 exports.refreshSchedule = function (devices) {
   return {
-    name: 'Battery Monitor SmartApp example - Refresh Schedule Rule',
+    name: "Battery Monitor SmartApp example - Refresh Schedule Rule",
     actions: [
       {
         every: {
           interval: {
             value: {
-              integer: 3
+              integer: 3,
             },
-            unit: 'Hour'
+            unit: "Hour",
           },
           actions: [
             {
@@ -16,17 +16,17 @@ exports.refreshSchedule = function (devices) {
                 devices: devices,
                 commands: [
                   {
-                    component: 'main',
-                    capability: 'refresh',
-                    command: 'refresh',
-                    arguments: []
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-    ]
+                    component: "main",
+                    capability: "refresh",
+                    command: "refresh",
+                    arguments: [],
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+    ],
   };
 };
