@@ -1,2 +1,6 @@
-module.exports = { notificationManager } = require('./sms-notification/notification-manager');
-module.exports = { refreshRuleManager } = require('./refresh-rule/rule-manager');
+const { notificationManager } = require('./sms-notification/notificationManager');
+const { refreshRuleManager } = require('./refresh-rule/refreshRuleManager');
+module.exports = {
+  notificationManager, 
+  refreshRuleManager
+};
