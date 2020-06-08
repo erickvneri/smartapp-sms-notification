@@ -1,9 +1,11 @@
 "use strict";
 const { refreshSchedule } = require("./refreshSchedule");
+
 exports.refreshRuleManager = function (batteryDevices, rulesApi, locationId) {
   const devices = batteryDevices.map(
     (deviceData) => deviceData.deviceConfig.deviceId
   );
+
   const scheduleRule = refreshSchedule(devices);
   // Check current list of Rules installed.
   rulesApi.list(locationId).then((rules) => {
@@ -15,7 +17,7 @@ exports.refreshRuleManager = function (batteryDevices, rulesApi, locationId) {
           .then(() => console.log("\nUpdating Rules..."));
       }
     });
-    // Recreate Refresh Schedules Rule.
+    // Create "Refresh Schedules" Rule.
     rulesApi
       .create(scheduleRule, locationId)
       .then((response) =>

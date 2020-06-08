@@ -1,5 +1,6 @@
 "use strict";
 require("dotenv").config();
+
 // Main imports
 const express = require("express");
 const SmartApp = require("@smartthings/smartapp");
@@ -10,6 +11,7 @@ const server = express();
 server.use(express.json());
 // SmartApp init
 const smartApp = new SmartApp();
+
 // SmartApp definition
 smartApp
   .appId("SmartApp example")
@@ -92,11 +94,13 @@ smartApp
       event.value
     );
   });
+
 // Enable server routing
 server.post("/", (req, res) => {
   console.log("\nLifecycle handled:", req.body.lifecycle);
   smartApp.handleHttpCallback(req, res);
 });
+
 // Server listener
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
