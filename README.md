@@ -1,6 +1,6 @@
 ## SMS Notification SmartApp - Battery Devices
 
- 
+
 This SmartApp will subscribe **battery** devices and trigger SMS notifications in the following cases:
 
 - If device's battery level is under **30%**.
@@ -28,7 +28,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
     - Authorization Token.
     - Trial Number.
     - The number that you've registered (_including the country code_).
-1. Save these values in a `.env` file following the format of the `.env.example` file, _e.g._: 
+1. Save these values in a `.env` file following the format of the `.env.example` file, _e.g._:
 
         # SERVER SETTINGS
         PORT=8000
@@ -44,7 +44,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 1. From Glitch, copy the **live Url** (_top-left of screen, Share/**live Url**_).
 1. Go to your [Developer Workspace](https://smartthings.developer.samsung.com/workspace).
 1. Create a _New Project_ - **_Automation for the SmartThings App_**.
-1. _Registe App_ as **Webhook endpoint** and paste the _live Url_ as your **Target Url**. 
+1. _Registe App_ as **Webhook endpoint** and paste the _live Url_ as your **Target Url**.
 1. White list the following permission scopes: `r:devices:*`, `x:devices:*`, `r:locations:*`,  `r:rules:*` and `w:rules:*`
 1. Click **next** and save your project. No additional configuration is required.
 1. Back to **Glitch**, copy the **confirmation Url** from the  logs (_bottom-left of screen, Tools/**Logs**_) and paste it at your browser.
@@ -58,6 +58,3 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 
 ---
 For more information, please check the [SmartThings Documentation](https://smartthings.developer.samsung/docs) or visit our  [Community Forums](https://community.smartthings.com)
-
-    
-    
