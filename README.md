@@ -12,23 +12,20 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 
 ## 1. Account requirements:
 1. An active [SmartThings](https://smartthings.developer.samsung.com/) account.
-1. A [Twilio](https://www.twilio.com/try-twilio) account (_free tier_).
 1. A [Glitch](https://glitch.com) account(_free-tier_).
-
-## 2. Setting up Glitch server.
-1. Go to _Glitch's_ main page.
-1. Create a **New Project** (_hello-express_).
-1. At the bottom-left, open **Tools**.
-1. Click *Import and export*/**Import from GitHub**.
-1. Write the GitHub's path of the project (_e.g. "git-username/smartapp-battery-sms-notification"_).
-
-## 3. Setting up environment.
-1. From your _Twilio_ account, get the followig info:
+1. A [Twilio](https://www.twilio.com/try-twilio) account (_free tier_).
+1. From your _Twilio_ account, collect the following info:
     - Account Sid.
     - Authorization Token.
-    - Trial Number.
-    - The number that you've registered (_including the country code_).
-1. Save these values in a `.env` file following the format of the `.env.example` file, _e.g._:
+    - Trial Number (*this value will be saved as **TWILIO_ORIG_NUM***).
+    - The number that you've registered (*including the country code. This value will be saved as **TWILIO_DEST_NUM***).
+
+## 2. Setting up Glitch server.
+1. Fork this repository so it can be imported at _Glitch_ from your **GitHub repository**.
+1. Go to _Glitch's_ main page.
+1. Create a **New Project** and **Import from GitHub** (_copy-paste the forked repository's Url_).
+
+1. Proceed to store your _Twilio_ account values at the `.env` file that _Glitch_ has included at your project following the format of the `.env.example` file. After saving them, your `.env` file should be looking like this (_plaintext view_):
 
         # SERVER SETTINGS
         PORT=8000
@@ -40,7 +37,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
         TWILIO_DEST_NUM=+0000000000
 
 
-## 4. Create your SmartApp Automation project.
+## 3. Create your SmartApp Automation project.
 1. From Glitch, copy the **live Url** (_top-left of screen, Share/**live Url**_).
 1. Go to your [Developer Workspace](https://smartthings.developer.samsung.com/workspace).
 1. Create a _New Project_ - **_Automation for the SmartThings App_**.
@@ -50,7 +47,7 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 1. Back to **Glitch**, copy the **confirmation Url** from the  logs (_bottom-left of screen, Tools/**Logs**_) and paste it at your browser.
 1. Once your SmartApp gets _verified_, **deploy it to test**.
 
-## 5. Install your SmartApp at the SmartThings app.
+## 4. Install your SmartApp at the SmartThings app.
 1. Open your SmartThings app.
 1. Access the SmartApp catalog (_at the main screen, tap "+" icon/**SmartApp**_).
 1. You will find your SmartApp listed at the bottom of the SmartApps catalog.
