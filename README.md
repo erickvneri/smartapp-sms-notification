@@ -12,8 +12,8 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 
 ## 1. Account requirements:
 1. An active [SmartThings](https://smartthings.developer.samsung.com/) account.
-1. A [Glitch](https://glitch.com) account(_free-tier_).
-1. A [Twilio](https://www.twilio.com/try-twilio) account (_free tier_).
+1. A [Glitch](https://glitch.com) account(_free-tier is ok_).
+1. A [Twilio](https://www.twilio.com/try-twilio) account (_free-tier is ok_).
 1. From your _Twilio_ account, collect the following info:
     - Account Sid.
     - Authorization Token.
