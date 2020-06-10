@@ -9,7 +9,7 @@ exports.refreshRuleManager = function (batteryDevices, rulesApi, locationId) {
   const scheduleRule = refreshSchedule(devices);
   // Check current list of Rules installed.
   rulesApi.list(locationId).then((rules) => {
-    if (!rules) {
+    if (rules) {
       rules.forEach((r) => {
         if (r.name == scheduleRule.name) {
           // If "Refresh Schedule" is found.
