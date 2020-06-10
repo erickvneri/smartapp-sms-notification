@@ -38,14 +38,15 @@ _**Note**: To help developers to integrate their SmartApp instance, this SmartAp
 
 
 ## 3. Create your SmartApp Automation project.
-1. From Glitch, copy the **live Url** (_top-left of screen, Share/**live Url**_).
+1. From Glitch, copy the **Live App** Url (_top-left of screen, Share/**Live App**_).
 1. Go to your [Developer Workspace](https://smartthings.developer.samsung.com/workspace).
 1. Create a _New Project_ - **_Automation for the SmartThings App_**.
-1. _Registe App_ as **Webhook endpoint** and paste the _live Url_ as your **Target Url**.
-1. White list the following permission scopes: `r:devices:*`, `x:devices:*`, `r:locations:*`,  `r:rules:*` and `w:rules:*`
-1. Click **next** and save your project. No additional configuration is required.
+1. _Registe App_ as **Webhook endpoint** and paste the _Live App_  Url as your **Target Url**.
+1. Name your SmartApp and whitelist the following permission scopes: `r:devices:*`, `x:devices:*`, `r:locations:*`,  `r:rules:*` and `w:rules:*`
+1. Click **next** and **save** your project. No additional configuration is required.
 1. Back to **Glitch**, copy the **confirmation Url** from the  logs (_bottom-left of screen, Tools/**Logs**_) and paste it at your browser.
-1. Once your SmartApp gets _verified_, **deploy it to test**.
+1. Back to your SmartApp's overview, you'll see that your SmartApp has been verified successfully.
+1. Finally, **Deploy it to test**.
 
 ## 4. Install your SmartApp at the SmartThings app.
 1. Open your SmartThings app.

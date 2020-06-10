@@ -36,14 +36,14 @@ smartApp
         section
           .paragraphSetting("")
           .name(
-            'This "Battery Monitor" SmartApp example will trigger an SMS Notification on critical device status.'
+            'The "Battery Monitor" SmartApp example will trigger an SMS Notification on critical device status.'
           )
           .description(
             "- Battery level dropping under 30%.\n- Device going offline."
           );
       });
     // Devices input section
-    page.section("Batter devices:", (section) => {
+    page.section("Battery devices:", (section) => {
       section
         .deviceSetting("batteryDevices")
         .name("")

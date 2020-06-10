@@ -6,11 +6,11 @@ exports.notificationManager = function (device, capability, value) {
 
   // If Battery level is under 30%
   if (capability == "battery" && value <= 30) {
-    statusMsg = `Device: "${device.label}"\nBattey: ${value}%\nStatus: online`;
+    statusMsg = `device: "${device.label}"\nlevel: ${value}%\nstatus: online`;
   }
   // If Health Status is Offline
   else if (capability == "healthCheck" && value == "offline") {
-    statusMsg = `WARNING!!\nDevice "${device.label}" is offline`;
+    statusMsg = `Warning!!\ndevice "${device.label}" is offline`;
   }
   if (statusMsg) {
     smsNotification(statusMsg);
