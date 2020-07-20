@@ -28,7 +28,9 @@
     "@smartthings/smartapp": "^2.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "twilio": "^3.44.0"
+    "twilio": "^3.44.0",
+    "lodash": ">=4.17.19"
+
   },
   "devDependencies": {
     "eslint": "^7.2.0"
